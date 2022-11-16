@@ -21,7 +21,7 @@ def find_outliers_iqr(data, feature, left=1.5, right=1.5, log_scale=False):
         x = np.log(data[feature]+1)
     else:
         x = data[feature]
-    quartile_1, quartile_3 = x.quartile(0.25), x.quartile(0.75),
+    quartile_1, quartile_3 = x.quartile(0.25), x.quartile(0.75)
     iqr = quartile_3 - quartile_1
     lower_bound = quartile_1 - (iqr * left)
     upper_bound =  quartile_3 + (iqr * right)
